@@ -1,0 +1,4 @@
+<form class="search" (ngSubmit)="onSubmit(); search.reset()" #search="ngForm">
+  <input type="text" name="title" [(ngModel)]="title" placeholder="Введите название видео" required>
+  <button type="submit" [disabled]="search.form.invalid">Найти</button>
+</form>
