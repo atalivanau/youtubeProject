@@ -10,6 +10,7 @@ const maxResults = `&maxResults=10`;
 
 @Injectable()
 export class VideoService {
+  title: string = '';
 
   constructor(private http: Http) {}
 

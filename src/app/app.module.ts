@@ -9,12 +9,14 @@ import { FormsModule } from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {VideoService} from './video.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    DashboardComponent
+    DashboardComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,

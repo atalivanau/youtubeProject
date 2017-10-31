@@ -1,6 +1,8 @@
 <header>
   <img src="/img/angular.svg"/>
-  <h1>Поиск видео на ютуб</h1>
+  <h1>{{title}}</h1>
 </header>
-<app-search></app-search>
-<app-dashboard></app-dashboard>
+<main>
+  <app-search (pass)="pass($event)"></app-search>
+  <app-dashboard></app-dashboard>
+</main>
