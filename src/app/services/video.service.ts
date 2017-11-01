@@ -10,12 +10,16 @@ const maxResults = `&maxResults=10`;
 
 @Injectable()
 export class VideoService {
-  title: string = '';
+  mas: any[];
 
   constructor(private http: Http) {}
 
   getVideo(videoName: string): Observable<any> {
     return this.http.get(`https://www.googleapis.com/youtube/v3/search?q=${videoName}${key}${part}${type}${maxResults}`)
-      .map((response: Response) => response.json());
+      .map((response: Response) => {
+          this.mas = response.json();
+          return response.json();
+        }
+      );
   }
 }

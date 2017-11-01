@@ -9,7 +9,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 export class SearchComponent implements OnInit {
 
-  title: string = '';
+  title = '';
 
   @Output() pass: EventEmitter<string> = new EventEmitter();
 

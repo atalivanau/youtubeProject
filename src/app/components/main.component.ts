@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {VideoService} from '../services/video.service';
 import {Observable} from 'rxjs/Observable';
+import {Subject} from "rxjs/Subject";
 
 @Component({
   selector: 'app-main',
@@ -11,6 +12,7 @@ import {Observable} from 'rxjs/Observable';
 export class MainComponent {
   title = 'Поиск видео на ютуб';
   videos: Observable<any>;
+  static onButtonClick: any = new Subject();
 
   constructor(private service: VideoService) { }
 
@@ -18,7 +20,8 @@ export class MainComponent {
     this.service.getVideo(event)
       .subscribe(video => {
         this.videos = video;
+        MainComponent.onButtonClick.next();
+        console.log('main', this.videos);
       });
-    console.log('main', this.videos);
   }
 }
