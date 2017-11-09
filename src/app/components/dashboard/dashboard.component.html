@@ -1,7 +1,27 @@
-<!--<div class="videos" *ngIf="videos.length">-->
-  <!--<app-item *ngFor="let video of videos"></app-item>-->
-<!--</div>-->
-
-<div class="videos">
-  <app-item></app-item>
+<div class="dashboard" *ngIf="count">
+    <mat-grid-list cols="1" rowHeight="2:1">
+        <mat-card class="card" *ngFor="let vid of videos">
+            <img src={{vid.snippet.thumbnails.high.url}} alt="">
+            <div class="description">
+                <div class="description-text">
+                    <span class="title">Название: </span>
+                    <span>{{vid.snippet.title}}</span>
+                </div>
+                <div class="description-text">
+                    <span class="publish">Дата публикации: </span>
+                    <span>{{vid.snippet.publishedAt}}</span>
+                </div>
+                <div class="description-text">
+                    <span class="publish">Название канала: </span>
+                    <span>{{vid.snippet.channelTitle}}</span>
+                </div>
+                <div class="detail">
+                    <button mat-raised-button color="primary">Подробнее</button>
+                </div>
+            </div>
+        </mat-card>
+    </mat-grid-list>
+</div>
+<div *ngIf="!count">
+    Ничего не найдено, сорян!
 </div>

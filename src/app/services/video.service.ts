@@ -11,6 +11,7 @@ const maxResults = `&maxResults=10`;
 @Injectable()
 export class VideoService {
   mas: any[];
+  countVideos: number;
 
   constructor(private http: Http) {}
 
@@ -18,6 +19,7 @@ export class VideoService {
     return this.http.get(`https://www.googleapis.com/youtube/v3/search?q=${videoName}${key}${part}${type}${maxResults}`)
       .map((response: Response) => {
           this.mas = response.json().items;
+          this.countVideos = response.json().pageInfo.totalResults;
           return response.json().items;
         }
       );

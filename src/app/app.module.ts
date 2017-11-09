@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 import {MatCardModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
 
@@ -26,6 +27,7 @@ import {MainComponent} from './components/main.component';
         BrowserAnimationsModule,
         FormsModule,
         HttpModule,
+        RouterModule,
         MatCardModule,
         MatButtonModule
     ],
