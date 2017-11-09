@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {VideoService} from '../services/video.service';
 import {Observable} from 'rxjs/Observable';
-import {Subject} from "rxjs/Subject";
+import {Subject} from 'rxjs/Subject';
 
 @Component({
   selector: 'app-main',
