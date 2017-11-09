@@ -1,10 +1,10 @@
 <!--<div class="item" *ngFor="let video of services.items">-->
 <div class="item">
 
-  <mat-grid-list cols="1" rowHeight="2:1">
-    <mat-card *ngFor="let vid of videos.items">
-      <img src={{vid.snippet.thumbnails.high.url}} alt="">
-      {{vid.snippet.title}}
-    </mat-card>
-  </mat-grid-list>
+    <mat-grid-list cols="1" rowHeight="2:1">
+        <mat-card *ngFor="let vid of videos.items">
+            <img src={{vid.snippet.thumbnails.high.url}} alt="">
+            {{vid.snippet.title}}
+        </mat-card>
+    </mat-grid-list>
 </div>
