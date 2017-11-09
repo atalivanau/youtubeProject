@@ -1,8 +1,6 @@
 import {Component,  OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
 import {VideoService} from '../../services/video.service';
-import {MainComponent} from '../main.component'
-
+import {MainComponent} from '../main.component';
 
 @Component({
   moduleId: module.id,
@@ -10,10 +8,9 @@ import {MainComponent} from '../main.component'
   templateUrl: 'item.component.html',
   styleUrls: ['item.component.css']
 })
+
 export class ItemComponent implements OnInit {
 
-  video: Observable<any> ;
-  title: string = '';
   videos: any[];
   constructor(private services: VideoService) {
   }
@@ -22,8 +19,6 @@ export class ItemComponent implements OnInit {
     MainComponent.onButtonClick.subscribe(() => {
       this.videos = null;
       this.videos =  this.services.mas;
-      console.log("!!!", this.videos);
     });
-  };
-
+  }
 }

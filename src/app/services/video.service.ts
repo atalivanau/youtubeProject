@@ -17,8 +17,8 @@ export class VideoService {
   getVideo(videoName: string): Observable<any> {
     return this.http.get(`https://www.googleapis.com/youtube/v3/search?q=${videoName}${key}${part}${type}${maxResults}`)
       .map((response: Response) => {
-          this.mas = response.json();
-          return response.json();
+          this.mas = response.json().items;
+          return response.json().items;
         }
       );
   }

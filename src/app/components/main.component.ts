@@ -21,7 +21,6 @@ export class MainComponent {
       .subscribe(video => {
         this.videos = video;
         MainComponent.onButtonClick.next();
-        console.log('main', this.videos);
       });
   }
 }

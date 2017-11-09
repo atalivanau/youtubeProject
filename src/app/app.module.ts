@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule} from '@angular/core';
 import { MatCardModule } from '@angular/material';
+import {MatButtonModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -25,7 +26,8 @@ import { MainComponent} from './components/main.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [VideoService],
   bootstrap: [AppComponent]
