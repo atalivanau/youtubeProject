@@ -1,26 +1,26 @@
 <!--<div class="item" *ngFor="let video of services.items">-->
 <div class="item">
 
-  <mat-grid-list cols="1" rowHeight="2:1">
-    <mat-card class="card" *ngFor="let vid of videos">
-      <img src={{vid.snippet.thumbnails.high.url}} alt="">
-      <div class="description">
-        <div>
-          <span class="title">Название: </span>
-          <span>{{vid.snippet.title}}</span>
-        </div>
-        <div>
-          <span class="publish">Дата публикации: </span>
-          <span>{{vid.snippet.publishedAt}}</span>
-        </div>
-        <div>
-          <span class="publish">Название канала: </span>
-          <span>{{vid.snippet.channelTitle}}</span>
-        </div>
-        <div class="detail">
-          <button mat-raised-button color="primary">Подробнее</button>
-        </div>
-      </div>
-    </mat-card>
-  </mat-grid-list>
+    <mat-grid-list cols="1" rowHeight="2:1">
+        <mat-card class="card" *ngFor="let vid of videos">
+            <img src={{vid.snippet.thumbnails.high.url}} alt="">
+            <div class="description">
+                <div class="description-text">
+                    <span class="title">Название: </span>
+                    <span>{{vid.snippet.title}}</span>
+                </div>
+                <div class="description-text">
+                    <span class="publish">Дата публикации: </span>
+                    <span>{{vid.snippet.publishedAt}}</span>
+                </div>
+                <div class="description-text">
+                    <span class="publish">Название канала: </span>
+                    <span>{{vid.snippet.channelTitle}}</span>
+                </div>
+                <div class="detail">
+                    <button mat-raised-button color="primary">Подробнее</button>
+                </div>
+            </div>
+        </mat-card>
+    </mat-grid-list>
 </div>
