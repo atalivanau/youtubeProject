@@ -26,7 +26,7 @@ export class ItemComponent implements OnInit {
             .switchMap((params: ParamMap) => this.videoService.getOneVideo(params.get('id')))
             .subscribe(item => {
                 this.item = item;
-                console.log("!!!!", item);
+                console.log("!!!!",  this.item);
                 return this.item;
             });
     }

@@ -12,11 +12,13 @@ const maxResults = `&maxResults=10`;
 export class VideoService {
     mas: any[];
     countVideos: number;
+    videoName: string;
 
     constructor(private http: Http) {
     }
 
     getVideo(videoName: string): Observable<any> {
+        this.videoName  = videoName;
         return this.http.get(`https://www.googleapis.com/youtube/v3/search?q=${videoName}${key}${part}${type}${maxResults}`)
             .map((response: Response) => {
                     this.mas = response.json().items;
@@ -26,13 +28,18 @@ export class VideoService {
             );
     }
 
-    getOneVideo(videoId: string) {
-        for (let i = 0; i < this.mas.length; i++) {
-            let item = this.mas[i];
-            if (item.id.videoId == videoId) {
-                return item;
-            }
-        }
-        return videoId;
+    getOneVideo(videoId: string): Observable<any> {
+        return this.http.get(`https://www.googleapis.com/youtube/v3/search?q=${this.videoName}${key}${part}${type}${maxResults}`)
+            .map((response: Response) => {
+                    for (let i = 0; i < response.json().items.length; i++) {
+                        let item = response.json().items[i];
+                        if (item.id.videoId == videoId) {
+                            return item;
+                        }
+                    }
+                    return response.json().items[0];
+                }
+            );
+
     }
 }
