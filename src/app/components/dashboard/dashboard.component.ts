@@ -23,4 +23,8 @@ export class DashboardComponent implements OnInit{
             this.count = this.services.countVideos;
         });
     }
+
+    onDetail(videoId) {
+
+    }
 }

@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
 import {MatCardModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
 
@@ -13,6 +13,11 @@ import {SearchComponent} from './components/search/search.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {ItemComponent} from './components/item/item.component';
 import {MainComponent} from './components/main.component';
+
+const appRoutes: Routes = [
+    { path: '', component: DashboardComponent},
+    { path: 'video', component: ItemComponent},
+];
 
 @NgModule({
     declarations: [
@@ -27,7 +32,7 @@ import {MainComponent} from './components/main.component';
         BrowserAnimationsModule,
         FormsModule,
         HttpModule,
-        RouterModule,
+        RouterModule.forRoot(appRoutes),
         MatCardModule,
         MatButtonModule
     ],

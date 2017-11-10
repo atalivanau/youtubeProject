@@ -1,4 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import {VideoService} from '../../services/video.service';
 
 @Component({
     moduleId: module.id,
@@ -9,7 +12,19 @@ import {Component, OnInit} from '@angular/core';
 
 export class ItemComponent implements OnInit {
 
+    @Input() video: any[];
+
+    constructor(
+        private route: ActivatedRoute,
+        private videoService: VideoService,
+        private location: Location
+    ) {}
+
     ngOnInit() {
 
+    }
+
+    goBack(): void {
+        this.location.back();
     }
 }
