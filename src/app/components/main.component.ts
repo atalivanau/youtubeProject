@@ -17,7 +17,7 @@ export class MainComponent {
   constructor(private service: VideoService) { }
 
   pass(event) {
-    this.service.getVideo(event)
+    this.service.getVideo(event.title, event.filter)
       .subscribe(video => {
         this.videos = video;
         MainComponent.onButtonClick.next();

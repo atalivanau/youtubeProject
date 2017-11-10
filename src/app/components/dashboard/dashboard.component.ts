@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
 
     videos: any[];
     count: number;
+    filter: boolean;
 
     constructor(private services: VideoService, private router: Router) {
     }
@@ -22,6 +23,7 @@ export class DashboardComponent implements OnInit {
             this.videos = null;
             this.videos = this.services.mas;
             this.count = this.services.countVideos;
+            this.filter = this.services.filter;
         });
     }
 
