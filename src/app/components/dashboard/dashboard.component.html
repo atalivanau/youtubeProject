@@ -15,9 +15,10 @@
                     <span class="publish">Название канала: </span>
                     <span>{{vid.snippet.channelTitle}}</span>
                 </div>
-                <div class="detail" (click)="onDetail(vid.id.videoId)" >
+                <a [routerLink]="['video', vid.id.videoId]"
+                class="detail"  (click)="onDetail(vid.id.videoId)" >
                     <button mat-raised-button color="primary">Подробнее</button>
-                </div>
+                </a>
             </div>
         </mat-card>
     </mat-grid-list>

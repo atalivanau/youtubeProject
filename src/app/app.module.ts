@@ -16,7 +16,7 @@ import {MainComponent} from './components/main.component';
 
 const appRoutes: Routes = [
     { path: '', component: DashboardComponent},
-    { path: 'video', component: ItemComponent},
+    { path: 'video/:id', component: ItemComponent},
 ];
 
 @NgModule({
