@@ -13,11 +13,8 @@ import {SearchComponent} from './components/search/search.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {ItemComponent} from './components/item/item.component';
 import {MainComponent} from './components/main.component';
+import {AppRoutingModule} from './app-routing.module';
 
-const appRoutes: Routes = [
-    { path: '', component: DashboardComponent},
-    { path: 'video/:id', component: ItemComponent},
-];
 
 @NgModule({
     declarations: [
@@ -32,9 +29,9 @@ const appRoutes: Routes = [
         BrowserAnimationsModule,
         FormsModule,
         HttpModule,
-        RouterModule.forRoot(appRoutes),
         MatCardModule,
-        MatButtonModule
+        MatButtonModule,
+        AppRoutingModule
     ],
     providers: [VideoService],
     bootstrap: [AppComponent]

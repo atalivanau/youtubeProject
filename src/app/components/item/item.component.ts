@@ -1,6 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import 'rxjs/add/operator/switchMap';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import {Location} from '@angular/common';
+
 import {VideoService} from '../../services/video.service';
 
 @Component({
@@ -12,16 +14,21 @@ import {VideoService} from '../../services/video.service';
 
 export class ItemComponent implements OnInit {
 
-    @Input() video: any[];
+    item: any;
 
-    constructor(
-        private route: ActivatedRoute,
-        private videoService: VideoService,
-        private location: Location
-    ) {}
+    constructor(private route: ActivatedRoute,
+                private videoService: VideoService,
+                private location: Location) {
+    }
 
     ngOnInit() {
-
+        this.route.paramMap
+            .switchMap((params: ParamMap) => this.videoService.getOneVideo(params.get('id')))
+            .subscribe(item => {
+                this.item = item;
+                console.log("!!!!", item);
+                return this.item;
+            });
     }
 
     goBack(): void {
