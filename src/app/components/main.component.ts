@@ -9,7 +9,8 @@ import {Subject} from 'rxjs/Subject';
     styleUrls: ['./main.component.css']
 })
 
-export class MainComponent {
+export class MainComponent
+{
     title = 'Поиск видео на ютуб';
     videos: Observable<any>;
     static onButtonClick: any = new Subject();

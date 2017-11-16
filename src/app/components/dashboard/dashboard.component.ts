@@ -23,7 +23,6 @@ export class DashboardComponent implements OnInit {
             this.videos = null;
             this.videos = this.services.mas;
             this.count = this.services.countVideos;
-            this.filter = this.services.filter;
         });
     }
 
