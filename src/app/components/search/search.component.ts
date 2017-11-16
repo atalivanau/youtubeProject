@@ -11,10 +11,10 @@ export class SearchComponent implements OnInit {
 
     title = '';
 
-    @Output() pass: EventEmitter<string> = new EventEmitter();
+    @Output() pass: EventEmitter<Object> = new EventEmitter();
 
     onSubmit() {
-        this.pass.emit(this.title);
+        this.pass.emit({title: this.title, filter: true});
     }
 
     ngOnInit() {
