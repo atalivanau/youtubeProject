@@ -29,17 +29,14 @@ export class VideoService {
     }
 
     getOneVideo(videoId: string): Observable<any> {
-        return this.http.get(`https://www.googleapis.com/youtube/v3/search?q=${this.videoName}${key}${part}${type}${maxResults}`)
-            .map((response: Response) => {
-                    for (let i = 0; i < response.json().items.length; i++) {
-                        let item = response.json().items[i];
-                        if (item.id.videoId == videoId) {
-                            return item;
-                        }
-                    }
-                    return response.json().items[0];
-                }
-            );
+        let itemVideo;
+        for (let i = 0; i < this.mas.length; i++) {
+            let item =  this.mas[i];
+            if (item.id.videoId == videoId) {
+                itemVideo = item;
+            }
+        }
+        return Observable.from([itemVideo]);
 
     }
 }
